@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ChangeEventHandler, FC } from "react";
+import React, { FC } from "react";
 import { useState } from "react";
 
 interface Props {
@@ -15,10 +15,7 @@ interface Data {
 const Card: FC<Props> = (props) => {
   const [data, setData] = useState<Data>({ uniName: "University" } as Data);
 
-  const handelChange = (
-    type: string,
-    value: React.ChangeEvent<HTMLInputElement>,
-  ) => {
+  const handelChange = (type: string, value: object) => {
     if (type === "name") {
       setData({ ...data, uniName: value.target.value });
     }
