@@ -7,20 +7,28 @@ interface Props {
 interface Data {
   uniName: string;
   endYear: number;
-  Subject: string;
+  subject: string;
   notes: string;
 }
 
 // you can also use typescript like this {cardName, type} : { cardName: string, type:number}
 const Card: FC<Props> = (props) => {
-  const [data, setData] = useState<Data>({ uniName: "University" } as Data);
+  const [data, setData] = useState<Data>({
+    uniName: "",
+    subject: "",
+    endYear: 2024,
+    notes: "",
+  } as Data);
 
   const handelChange = (
     type: string,
     value: React.ChangeEvent<HTMLInputElement>,
   ) => {
     if (type === "name") {
-      setData({ ...data, uniName: value.target.value });
+      return setData({ ...data, uniName: value.target.value });
+    }
+    if (type === "subject") {
+      return setData({ ...data, subject: value.target.value });
     }
   };
   return (
@@ -35,6 +43,15 @@ const Card: FC<Props> = (props) => {
             type="text"
             className="outline-black border-4 border-black block rounded-lg"
             onChange={(e) => handelChange("name", e)}
+          />
+        </label>
+        <label className="block">
+          {"Subject"}
+          <input
+            value={data.subject}
+            type="text"
+            className="outline-black border-4 border-black block rounded-lg"
+            onChange={(e) => handelChange("subject", e)}
           />
         </label>
       </form>
