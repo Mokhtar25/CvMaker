@@ -1,9 +1,13 @@
 import { useState } from "react";
+import Header from "./components/header";
+import Footer from "./components/footer";
 
 function App() {
   return (
     <>
-      <h2 className="text-3xl text-red-900">hello, world</h2>
+      <Header />
+
+      <Footer />
     </>
   );
 }
