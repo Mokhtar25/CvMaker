@@ -1,8 +1,15 @@
-import React, { ChangeEvent, ChangeEventHandler, FC } from "react";
+import React, {
+  ChangeEvent,
+  ChangeEventHandler,
+  FC,
+  FormEvent,
+  FormEventHandler,
+} from "react";
 import { useState } from "react";
 
 interface Props {
-  cardName: string;
+  inputs: string[];
+  isActive?: any;
 }
 interface Data {
   uniName: string;
@@ -11,15 +18,16 @@ interface Data {
   notes: string;
 }
 
+const defaultData: Data = {
+  uniName: "",
+  subject: "",
+  endYear: 2024,
+  notes: "",
+};
 // you can also use typescript like this {cardName, type} : { cardName: string, type:number}
 const Card: FC<Props> = (props) => {
-  const [data, setData] = useState<Data>({
-    uniName: "",
-    subject: "",
-    endYear: 2024,
-    notes: "",
-  } as Data);
-
+  const [data, setData] = useState<Data>(defaultData);
+  const inputStyle = "outline-black border-4 border-black block rounded-lg";
   const handelChange = (
     type: string,
     value: React.ChangeEvent<HTMLInputElement>,
@@ -31,14 +39,19 @@ const Card: FC<Props> = (props) => {
       return setData({ ...data, subject: value.target.value });
     }
   };
-  // <h2 className="text-xl">{props.cardName}</h2>
+  const rest = () => {
+    setData(defaultData);
+  };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log(data);
+  };
   return (
     <div className="border-2 border-red-500 flex flex-col gap-4 pl-6">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label className="block">
           {"University"}
           <input
-            key={1}
             value={data.uniName}
             type="text"
             className="outline-black border-4 border-black block rounded-lg"
@@ -52,9 +65,24 @@ const Card: FC<Props> = (props) => {
             type="text"
             className="outline-black border-4 border-black block rounded-lg"
             onChange={(e) => handelChange("subject", e)}
-            key={2}
           />
         </label>
+        {props.inputs.map((e) => (
+          <label className="block">
+            {e}
+            <input
+              value={data.subject}
+              type="text"
+              className={inputStyle}
+              onChange={(e) => handelChange("subject", e)}
+            />
+          </label>
+        ))}
+
+        <button type="submit"> submit </button>
+        <button type="reset" onClick={rest}>
+          Rest
+        </button>
       </form>
     </div>
   );

@@ -4,15 +4,15 @@ import Footer from "./components/footer";
 import Card from "./components/Card";
 import Section from "./components/Section";
 
+// you can passdown functions to help with passing and moving around data that might change and
+// also to rint inthe other field and when submit
 function App() {
   return (
     <>
       <Header />
-
-      <Section key={2} text={"Education"}>
-        <Card key={1} cardName={"Education"} />
+      <Section text={"Education"}>
+        <Card inputs={["subject", "name", "what"]} />
       </Section>
-
       <Footer />
     </>
   );
