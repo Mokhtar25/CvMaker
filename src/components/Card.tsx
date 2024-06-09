@@ -30,11 +30,16 @@ const defaultData: Data = {
 // you can also use typescript like this {cardName, type} : { cardName: string, type:number}
 const CardEduc: FC<Props> = (props) => {
   const [data, setData] = useState<Data>(defaultData);
-  const inputStyle = "outline-black border-4 border-black block rounded-lg";
+  const inputStyle =
+    "outline-black border-4 w-[75%] p-1 h-10 border-black block rounded-lg";
+  const buttonStyle =
+    " rounded-xl text-white p-2 hover:bg-slate-500 active:bg-slate-400 bg-slate-700";
 
   const handelChange = (
     type: string,
-    value: React.ChangeEvent<HTMLInputElement>,
+    value:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>,
   ) => {
     switch (type) {
       case "uniName":
@@ -56,14 +61,14 @@ const CardEduc: FC<Props> = (props) => {
     e.preventDefault();
   };
   return (
-    <div className="border-2 border-red-500 flex flex-col gap-4 pl-6">
+    <div className="border-2 bg-slate-200 font-bold flex flex-col gap-4 pl-6">
       <form onSubmit={handleSubmit}>
         <label className="block">
           {"University"}
           <input
             value={data.uniName}
             type="text"
-            className="outline-black border-4 border-black block rounded-lg"
+            className={inputStyle}
             onChange={(e) => handelChange("uniName", e)}
           />
         </label>
@@ -72,7 +77,7 @@ const CardEduc: FC<Props> = (props) => {
           <input
             value={data.subject}
             type="text"
-            className="outline-black border-4 border-black block rounded-lg"
+            className={inputStyle}
             onChange={(e) => handelChange("subject", e)}
           />
         </label>
@@ -82,24 +87,28 @@ const CardEduc: FC<Props> = (props) => {
           <input
             value={data.endYear}
             type="date"
-            className="outline-black border-4 border-black block rounded-lg"
+            className={inputStyle}
             onChange={(e) => handelChange("endYear", e)}
           />
         </label>
 
         <label className="block">
           {"Notes"}
-          <input
+          <textarea
             value={data.notes}
-            type="text"
-            className="outline-black border-4 border-black block rounded-lg"
+            className={inputStyle + " h-28 "}
             onChange={(e) => handelChange("notes", e)}
           />
         </label>
-        <button type="submit"> submit </button>
-        <button type="reset" onClick={rest}>
-          Rest
-        </button>
+        <div className="flex justify-between pr-4 flex-row-reverse  py-2">
+          {" "}
+          <button className={buttonStyle} type="submit">
+            Submit
+          </button>
+          <button type="reset" className={buttonStyle} onClick={rest}>
+            Rest
+          </button>
+        </div>
       </form>
     </div>
   );
