@@ -21,14 +21,14 @@ const Section: FC<Props> = (props: Props) => {
     return (
       <div className={style + " flex-col "}>
         <div className={styleBanner + " flex "}>
-          <h2>{props.text}</h2>
+          <h2 className="text-xl">{props.text}</h2>
           <button onClick={handelOpen}>
             <img
               src={DropDown}
               alt="Close Pop up"
-              width={22}
-              height={22}
-              className="rotate-180"
+              width={26}
+              height={26}
+              className="rotate-180 "
             ></img>
           </button>
         </div>
@@ -39,9 +39,9 @@ const Section: FC<Props> = (props: Props) => {
   } else {
     return (
       <div className={style + " " + styleBanner}>
-        <h2>{props.text}</h2>
+        <h2 className="text-xl">{props.text}</h2>
         <button onClick={handelOpen}>
-          <img src={DropDown} alt="dropdown" width={22} height={22}></img>
+          <img src={DropDown} alt="dropdown" width={26} height={26}></img>
         </button>
       </div>
     );
