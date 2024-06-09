@@ -11,7 +11,7 @@ function App() {
     <>
       <Header />
       <Section text={"Education"}>
-        <Card inputs={["subject", "name", "what"]} />
+        <Card />
       </Section>
       <Footer />
     </>

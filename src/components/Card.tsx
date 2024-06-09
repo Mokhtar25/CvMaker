@@ -8,12 +8,15 @@ import React, {
 import { useState } from "react";
 
 interface Props {
-  inputs: string[];
-  isActive?: any;
+  uniName: string;
+  subject: string;
+  endYear: number;
+  notes: string;
+  submit: () => void;
 }
 interface Data {
   uniName: string;
-  endYear: number;
+  endYear: string;
   subject: string;
   notes: string;
 }
@@ -21,22 +24,29 @@ interface Data {
 const defaultData: Data = {
   uniName: "",
   subject: "",
-  endYear: 2024,
+  endYear: "",
   notes: "",
 };
 // you can also use typescript like this {cardName, type} : { cardName: string, type:number}
-const Card: FC<Props> = (props) => {
+const CardEduc: FC<Props> = (props) => {
   const [data, setData] = useState<Data>(defaultData);
   const inputStyle = "outline-black border-4 border-black block rounded-lg";
+
   const handelChange = (
     type: string,
     value: React.ChangeEvent<HTMLInputElement>,
   ) => {
-    if (type === "name") {
-      return setData({ ...data, uniName: value.target.value });
-    }
-    if (type === "subject") {
-      return setData({ ...data, subject: value.target.value });
+    switch (type) {
+      case "uniName":
+        return setData({ ...data, uniName: value.target.value });
+
+      case "subject":
+        return setData({ ...data, subject: value.target.value });
+
+      case "endYear":
+        return setData({ ...data, endYear: value.target.value });
+      case "notes":
+        return setData({ ...data, notes: value.target.value });
     }
   };
   const rest = () => {
@@ -44,7 +54,6 @@ const Card: FC<Props> = (props) => {
   };
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(data);
   };
   return (
     <div className="border-2 border-red-500 flex flex-col gap-4 pl-6">
@@ -55,7 +64,7 @@ const Card: FC<Props> = (props) => {
             value={data.uniName}
             type="text"
             className="outline-black border-4 border-black block rounded-lg"
-            onChange={(e) => handelChange("name", e)}
+            onChange={(e) => handelChange("uniName", e)}
           />
         </label>
         <label className="block">
@@ -67,18 +76,26 @@ const Card: FC<Props> = (props) => {
             onChange={(e) => handelChange("subject", e)}
           />
         </label>
-        {props.inputs.map((e) => (
-          <label className="block">
-            {e}
-            <input
-              value={data.subject}
-              type="text"
-              className={inputStyle}
-              onChange={(e) => handelChange("subject", e)}
-            />
-          </label>
-        ))}
 
+        <label className="block">
+          {"Year"}
+          <input
+            value={data.endYear}
+            type="date"
+            className="outline-black border-4 border-black block rounded-lg"
+            onChange={(e) => handelChange("endYear", e)}
+          />
+        </label>
+
+        <label className="block">
+          {"Notes"}
+          <input
+            value={data.notes}
+            type="text"
+            className="outline-black border-4 border-black block rounded-lg"
+            onChange={(e) => handelChange("notes", e)}
+          />
+        </label>
         <button type="submit"> submit </button>
         <button type="reset" onClick={rest}>
           Rest
@@ -88,4 +105,4 @@ const Card: FC<Props> = (props) => {
   );
 };
 
-export default Card;
+export default CardEduc;
