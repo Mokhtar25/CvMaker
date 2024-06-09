@@ -1,4 +1,6 @@
 import { FC, useState } from "react";
+import DropDown from "../assets/dropdown.svg";
+import DropUp from "../assets/dropup.svg";
 
 interface Props {
   text: string;
@@ -20,7 +22,15 @@ const Section: FC<Props> = (props: Props) => {
       <div className={style + " flex-col "}>
         <div className={styleBanner + " flex "}>
           <h2>{props.text}</h2>
-          <button onClick={handelOpen}>-</button>
+          <button onClick={handelOpen}>
+            <img
+              src={DropDown}
+              alt="Close Pop up"
+              width={22}
+              height={22}
+              className="rotate-180"
+            ></img>
+          </button>
         </div>
 
         {props.children}
@@ -30,7 +40,9 @@ const Section: FC<Props> = (props: Props) => {
     return (
       <div className={style + " " + styleBanner}>
         <h2>{props.text}</h2>
-        <button onClick={handelOpen}>+</button>
+        <button onClick={handelOpen}>
+          <img src={DropDown} alt="dropdown" width={22} height={22}></img>
+        </button>
       </div>
     );
   }
