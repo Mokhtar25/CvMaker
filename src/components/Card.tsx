@@ -31,14 +31,14 @@ const Card: FC<Props> = (props) => {
       return setData({ ...data, subject: value.target.value });
     }
   };
+  // <h2 className="text-xl">{props.cardName}</h2>
   return (
-    <div className="border-4 size-64 border-black flex flex-col items-center gap-4 m-4">
-      <h2 className="text-xl">{props.cardName}</h2>
-
+    <div className="border-2 border-red-500 flex flex-col gap-4 pl-6">
       <form>
         <label className="block">
           {"University"}
           <input
+            key={1}
             value={data.uniName}
             type="text"
             className="outline-black border-4 border-black block rounded-lg"
@@ -52,6 +52,7 @@ const Card: FC<Props> = (props) => {
             type="text"
             className="outline-black border-4 border-black block rounded-lg"
             onChange={(e) => handelChange("subject", e)}
+            key={2}
           />
         </label>
       </form>

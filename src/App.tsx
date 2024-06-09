@@ -9,8 +9,8 @@ function App() {
     <>
       <Header />
 
-      <Section text={"Education"}>
-        <Card cardName={"Education"} />
+      <Section key={2} text={"Education"}>
+        <Card key={1} cardName={"Education"} />
       </Section>
 
       <Footer />
