@@ -9,6 +9,7 @@ import { useState } from "react";
 
 interface Props {
   submit: () => void;
+  hide: (e: boolean) => void;
 }
 interface Data {
   uniName: string;
@@ -55,9 +56,10 @@ const CardEduc: FC<Props> = (props) => {
   };
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    props.hide(false);
   };
   return (
-    <div className="border-2   bg-slate-200 font-bold flex flex-col gap-4 pl-6">
+    <div className="border-2    bg-slate-200 font-bold flex flex-col gap-4 pl-6 ">
       <form onSubmit={handleSubmit}>
         <label className="block">
           {"University"}

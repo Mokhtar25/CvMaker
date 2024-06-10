@@ -1,13 +1,22 @@
-import { FC, useState } from "react";
+import React, {
+  FC,
+  ReactElement,
+  ReactNode,
+  cloneElement,
+  useState,
+} from "react";
 import DropDown from "../assets/dropdown.svg";
 
 interface Props {
   text: string;
-  children: React.ReactNode;
+  children: ReactElement<any>;
 }
 
-const Section: FC<Props> = (props: Props) => {
+const Section: FC<Props> = ({ text, children }: Props) => {
   const [open, setOpen] = useState(true);
+
+  const childernwith = cloneElement(children, { hide: setOpen });
+  console.log(childernwith);
 
   const style =
     "border-2 border-black rounded flex w-[25%] transition-[height] ";
@@ -25,7 +34,7 @@ const Section: FC<Props> = (props: Props) => {
             : "flex w-full flex-row justify-between "
         }
       >
-        <h2 className="text-xl">{props.text}</h2>
+        <h2 className="text-xl">{text}</h2>
         <button onClick={handelOpen}>
           <img
             src={DropDown}
@@ -36,7 +45,7 @@ const Section: FC<Props> = (props: Props) => {
           ></img>
         </button>
       </div>
-      <div className={open ? "" : "hidden"}>{props.children}</div>
+      <div className={open ? "" : "hidden"}>{childernwith}</div>
     </div>
   );
 };
