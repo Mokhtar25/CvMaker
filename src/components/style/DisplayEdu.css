@@ -1,10 +1,7 @@
 .display-card {
   display: grid;
+  align-items: center;
   width: 600px;
-
-  white-space: initial;
-  overflow-wrap: break-word;
-
   grid-template-areas:
     "subject subject endYear"
     "uniName uniName uniName"
@@ -14,11 +11,13 @@
 .display-notes {
   grid-area: notes;
 }
-.display-subjcet {
+.display-subject {
   grid-area: subject;
+  text-transform: capitalize;
 }
 .display-uniName {
   grid-area: uniName;
+  text-transform: capitalize;
 }
 .display-endYear {
   grid-area: endYear;
