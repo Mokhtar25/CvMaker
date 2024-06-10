@@ -1,10 +1,4 @@
-import React, {
-  FC,
-  ReactElement,
-  ReactNode,
-  cloneElement,
-  useState,
-} from "react";
+import { FC, ReactElement, cloneElement, useState } from "react";
 import DropDown from "../assets/dropdown.svg";
 
 interface Props {
@@ -12,7 +6,7 @@ interface Props {
   children: ReactElement<any>;
 }
 
-const Section: FC<Props> = ({ text, children }: Props) => {
+const Section: FC<Props> = ({ text, children }) => {
   const [open, setOpen] = useState(true);
 
   const childernwith = cloneElement(children, { hide: setOpen });

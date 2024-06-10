@@ -1,0 +1,25 @@
+.display-card {
+  display: grid;
+  width: 600px;
+
+  white-space: initial;
+  overflow-wrap: break-word;
+
+  grid-template-areas:
+    "subject subject endYear"
+    "uniName uniName uniName"
+    "notes notes  notes";
+}
+
+.display-notes {
+  grid-area: notes;
+}
+.display-subjcet {
+  grid-area: subject;
+}
+.display-uniName {
+  grid-area: uniName;
+}
+.display-endYear {
+  grid-area: endYear;
+}
