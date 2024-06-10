@@ -8,10 +8,6 @@ import React, {
 import { useState } from "react";
 
 interface Props {
-  uniName: string;
-  subject: string;
-  endYear: number;
-  notes: string;
   submit: () => void;
 }
 interface Data {
@@ -31,7 +27,7 @@ const defaultData: Data = {
 const CardEduc: FC<Props> = (props) => {
   const [data, setData] = useState<Data>(defaultData);
   const inputStyle =
-    "outline-black border-4 w-[75%] p-1 h-10 border-black block rounded-lg";
+    "outline-black font-medium border-4 w-[75%] p-1 h-10 border-black block rounded-lg";
   const buttonStyle =
     " rounded-xl text-white p-2 hover:bg-slate-500 active:bg-slate-400 bg-slate-700";
 
@@ -61,7 +57,7 @@ const CardEduc: FC<Props> = (props) => {
     e.preventDefault();
   };
   return (
-    <div className="border-2 bg-slate-200 font-bold flex flex-col gap-4 pl-6">
+    <div className="border-2   bg-slate-200 font-bold flex flex-col gap-4 pl-6">
       <form onSubmit={handleSubmit}>
         <label className="block">
           {"University"}

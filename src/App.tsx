@@ -11,7 +11,13 @@ function App() {
     <>
       <Header />
       <Section text={"Education"}>
-        <Card />
+        <Card
+          uniName="s"
+          subject="ad"
+          endYear="2025"
+          submit={() => console.log("3")}
+          notes="no notes"
+        />
       </Section>
       <Footer />
     </>
