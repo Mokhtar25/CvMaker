@@ -87,8 +87,11 @@ const CardEduc: FC<Props> = (props) => {
           {"Year"}
           <input
             value={data.endYear}
-            min="1980"
-            max="2030"
+            min={1980}
+            max={2030}
+            onInvalid={(e: React.InvalidEvent<HTMLInputElement>) =>
+              e.target.setCustomValidity("Please enter a valid year")
+            }
             required
             type="number"
             className={inputStyle}
