@@ -1,6 +1,7 @@
 .display-card {
   display: grid;
   align-items: center;
+  height: fit-content;
   width: 600px;
   grid-template-areas:
     "subject subject endYear"

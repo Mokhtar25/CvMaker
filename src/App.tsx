@@ -11,15 +11,22 @@ function App() {
   return (
     <>
       <Header />
-      <Section text={"Education"}>
-        <Card submit={() => console.log("3")} />
-      </Section>
-      <DisplayEdu
-        uniName="uniName"
-        subject="scince"
-        endYear="2023"
-        notes="Lorem ipsum dolor sit amet, qui Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderitvelit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis. minim labore adipisicing minim sint cillum sint consectetur cupidatat."
-      />
+      <div className="content flex justify-between h-screen">
+        <div className="info w-[35%] ">
+          <Section text={"Education"}>
+            <Card submit={() => console.log("3")} />
+          </Section>
+        </div>
+        <div className="display w-[65%] flex justify-center">
+          <DisplayEdu
+            uniName="uniName"
+            subject="scince"
+            endYear="2023"
+            notes="Lorem ipsum dolor sit amet, qui Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatatconsectetur cupidatat."
+          />
+        </div>
+      </div>
+
       <Footer />
     </>
   );

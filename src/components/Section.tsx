@@ -12,8 +12,7 @@ const Section: FC<Props> = ({ text, children }) => {
   const childernwith = cloneElement(children, { hide: setOpen });
   console.log(childernwith);
 
-  const style =
-    "border-2 border-black rounded flex w-[25%] transition-[height] ";
+  const style = "border-2 border-black rounded flex  transition-[height] ";
   const styleBanner = "items-center justify-between  px-8 py-2 ";
   const handelOpen = () => {
     setOpen(!open);
