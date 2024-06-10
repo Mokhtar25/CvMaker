@@ -5,16 +5,21 @@ import Card from "./components/Card";
 import Section from "./components/Section";
 import { DisplayEdu } from "./components/DisplayEdu";
 
+import { Data } from "./components/Card";
+import { defaultData } from "./components/Card";
 // you can passdown functions to help with passing and moving around data that might change and
 // also to rint inthe other field and when submit
+
 function App() {
+  const [eduInfo, setEduInfo] = useState<Data>(defaultData);
+
   return (
     <>
       <Header />
       <div className="content flex justify-between h-screen">
         <div className="info w-[35%] ">
           <Section text={"Education"}>
-            <Card submit={() => console.log("3")} />
+            <Card submit={setEduInfo} />
           </Section>
         </div>
         <div className="display w-[65%] flex justify-center">
@@ -24,6 +29,14 @@ function App() {
             endYear="2023"
             notes="Lorem ipsum dolor sit amet, qui Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatatconsectetur cupidatat."
           />
+          {eduInfo.subject && (
+            <DisplayEdu
+              uniName={eduInfo.uniName}
+              subject={eduInfo.subject}
+              notes={eduInfo.notes}
+              endYear={eduInfo.endYear}
+            />
+          )}
         </div>
       </div>
 

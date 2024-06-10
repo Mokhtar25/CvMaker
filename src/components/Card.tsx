@@ -8,7 +8,7 @@ import React, {
 import { useState } from "react";
 
 interface Props {
-  submit: () => void;
+  submit: any;
   hide?: (e: boolean) => void;
 }
 export interface Data {
@@ -18,7 +18,7 @@ export interface Data {
   notes: string;
 }
 
-const defaultData: Data = {
+export const defaultData: Data = {
   uniName: "",
   subject: "",
   endYear: "",
@@ -57,6 +57,7 @@ const CardEduc: FC<Props> = (props) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (props.hide) props.hide(false);
+    props.submit(data);
   };
   return (
     <div className="border-2    bg-slate-200 font-bold flex flex-col gap-4 pl-6 ">
@@ -68,6 +69,7 @@ const CardEduc: FC<Props> = (props) => {
             type="text"
             className={inputStyle}
             onChange={(e) => handelChange("uniName", e)}
+            required
           />
         </label>
         <label className="block">
@@ -76,6 +78,7 @@ const CardEduc: FC<Props> = (props) => {
             value={data.subject}
             type="text"
             className={inputStyle}
+            required
             onChange={(e) => handelChange("subject", e)}
           />
         </label>
@@ -84,7 +87,10 @@ const CardEduc: FC<Props> = (props) => {
           {"Year"}
           <input
             value={data.endYear}
-            type="date"
+            min="1980"
+            max="2030"
+            required
+            type="number"
             className={inputStyle}
             onChange={(e) => handelChange("endYear", e)}
           />
@@ -94,8 +100,9 @@ const CardEduc: FC<Props> = (props) => {
           {"Notes"}
           <textarea
             value={data.notes}
-            className={inputStyle + " h-28 "}
+            className={inputStyle + " h-fit min-h-20 max-h-72"}
             onChange={(e) => handelChange("notes", e)}
+            required
           />
         </label>
         <div className="flex justify-between pr-4 flex-row-reverse  py-2">
