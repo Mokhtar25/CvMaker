@@ -5,16 +5,18 @@ import Card from "./components/Card";
 import Section from "./components/Section";
 import { DisplayEdu } from "./components/DisplayEdu";
 import PersonalInfo from "./components/PersonalInfo";
+import { defaultPersonalInfo } from "./DefaultData";
 
 import { Info } from "./components/PersonalInfo";
 import { Data } from "./components/Card";
 import { defaultData } from "./components/Card";
+
 // you can passdown functions to help with passing and moving around data that might change and
 // also to rint inthe other field and when submit
 
 function App() {
   const [eduInfo, setEduInfo] = useState<Data>(defaultData);
-  const [perInfo, setPerInfo] = useState<Info>();
+  const [perInfo, setPerInfo] = useState<Info>(defaultPersonalInfo);
 
   return (
     <>
@@ -24,7 +26,7 @@ function App() {
           <Section text={"Education"}>
             <Card submit={setEduInfo} />
           </Section>
-          <PersonalInfo />
+          <PersonalInfo set={setPerInfo} />
         </div>
         <div className="display w-[65%] flex items-center flex-col bg-slate-200">
           <DisplayEdu
