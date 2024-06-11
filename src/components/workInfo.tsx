@@ -1,7 +1,8 @@
 import { ChangeEvent, FC } from "react";
 import { Button, Input } from "./PersonalInfo";
+import { defaultWorkInfo } from "../DefaultData";
 
-type WorkInfo = {
+export type WorkInfo = {
   location: string;
   startDate: string;
   company: string;
@@ -11,19 +12,32 @@ type WorkInfo = {
 };
 
 interface Props {
-  set: React.SetStateAction<WorkInfo>;
+  set: React.Dispatch<WorkInfo>;
   show?: (type: boolean) => void;
   data: WorkInfo;
 }
 
-const workInfo: FC<Props> = ({ set, show, data }) => {
+const WorkInput: FC<Props> = ({ set, show, data }) => {
   const handelChange = (type: string, e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+    switch (type) {
+      case "location":
+        return set({ ...data, location: value });
+      case "startDate":
+        return set({ ...data, startDate: value });
+      case "finishDate":
+        return set({ ...data, finishDate: value });
+      case "company":
+        return set({ ...data, company: value });
+      case "notes":
+        return set({ ...data, notes: value });
+      case "jobTitle":
+        return set({ ...data, jobTitle: value });
+    }
   };
 
   const reset = () => {
-    // to do
-    set();
+    set(defaultWorkInfo);
   };
   const handelSubmit = () => {
     if (show) show(true);
@@ -72,3 +86,4 @@ const workInfo: FC<Props> = ({ set, show, data }) => {
     </form>
   );
 };
+export default WorkInput;
