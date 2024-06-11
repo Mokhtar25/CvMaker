@@ -23,10 +23,10 @@ function App() {
   const [workInfo, setWorkInfo] = useState<WorkInfo>(defaultWorkInfo);
 
   return (
-    <>
+    <div className="h-[100%]">
       <Header />
-      <div className="content flex justify-between h-screen">
-        <div className="info w-[35%] ">
+      <div className="flex justify-between min-h-screen h-full ">
+        <div className="info w-2/5 ">
           <Section text="Personal Information">
             <PersonalInfo set={setPerInfo} data={perInfo} />
           </Section>
@@ -38,7 +38,7 @@ function App() {
             <WorkInput data={workInfo} set={setWorkInfo} />
           </Section>
         </div>
-        <div className="display w-[65%] flex items-center flex-col bg-slate-200">
+        <div className="display w-full flex items-center flex-col bg-slate-200 ">
           {eduInfo.subject && (
             <DisplayEdu
               uniName={eduInfo.uniName}
@@ -51,7 +51,7 @@ function App() {
       </div>
 
       <Footer />
-    </>
+    </div>
   );
 }
 
