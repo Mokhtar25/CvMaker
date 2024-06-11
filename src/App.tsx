@@ -26,7 +26,7 @@ function App() {
     <div className="h-[100%]">
       <Header />
       <div className="flex justify-between min-h-screen h-full ">
-        <div className="info w-2/5 ">
+        <div className="info w-2/4 ">
           <Section text="Personal Information">
             <PersonalInfo set={setPerInfo} data={perInfo} />
           </Section>

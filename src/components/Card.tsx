@@ -9,7 +9,7 @@ import { useState } from "react";
 
 interface Props {
   submit: React.Dispatch<React.SetStateAction<Data>>;
-  hide?: (e: boolean) => void;
+  show?: (e: boolean) => void;
 }
 export interface Data {
   uniName: string;
@@ -30,7 +30,7 @@ const CardEduc: FC<Props> = (props) => {
   const inputStyle =
     "outline-black font-medium border-4 w-[75%] p-1 h-10 border-black block rounded-lg";
   const buttonStyle =
-    " rounded-xl text-white p-2 hover:bg-slate-500 active:bg-slate-400 bg-slate-700";
+    " rounded-xl text-white p-2 hover:bg-slate-500 active:bg-slate-400 bg-slate-700 w-full";
 
   const handelChange = (
     type: string,
@@ -56,7 +56,7 @@ const CardEduc: FC<Props> = (props) => {
   };
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (props.hide) props.hide(false);
+    if (props.show) props.show(false);
     props.submit(data);
   };
   return (
@@ -105,13 +105,12 @@ const CardEduc: FC<Props> = (props) => {
             required
           />
         </label>
-        <div className="flex justify-between pr-4 flex-row-reverse  py-2">
-          {" "}
-          <button className={buttonStyle} type="submit">
-            Submit
-          </button>
+        <div className="flex gap-6 py-4 pr-4">
           <button type="reset" className={buttonStyle} onClick={rest}>
             Rest
+          </button>
+          <button className={buttonStyle} type="submit">
+            Submit
           </button>
         </div>
       </form>

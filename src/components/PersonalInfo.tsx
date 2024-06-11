@@ -97,13 +97,19 @@ const PersonalInfo: FC<Props> = ({ show, set, data }) => {
         type={"date"}
         onChange={(e) => handelOnChange("birthDate", e)}
       />
-      <Button
-        title="Reset"
-        type="reset"
-        style=" mt-6 w-20 h-14"
-        onClick={() => rest()}
-      />
-      <Button title="Submit" style=" mt-6 ml-auto mr-20 h-14" type="submit" />
+      <div className="flex gap-6">
+        <Button
+          title="Reset"
+          type="reset"
+          style=" mt-6 w-full h-14"
+          onClick={() => rest()}
+        />
+        <Button
+          title="Submit"
+          style=" mt-6  w-full ml-auto mr-20 h-14"
+          type="submit"
+        />
+      </div>
     </form>
   );
 };
