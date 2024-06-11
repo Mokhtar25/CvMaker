@@ -23,11 +23,11 @@ function App() {
       <Header />
       <div className="content flex justify-between h-screen">
         <div className="info w-[35%] ">
-          <Section text={"Education"}>
-            <Card submit={setEduInfo} />
-          </Section>
           <Section text="Personal Information">
             <PersonalInfo set={setPerInfo} data={perInfo} />
+          </Section>
+          <Section text={"Education"}>
+            <Card submit={setEduInfo} />
           </Section>
         </div>
         <div className="display w-[65%] flex items-center flex-col bg-slate-200">
