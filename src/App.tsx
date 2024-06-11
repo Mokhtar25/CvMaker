@@ -33,15 +33,12 @@ function App() {
           <Section text={"Education"}>
             <Card submit={setEduInfo} />
           </Section>
-          <WorkInput data={workInfo} set={setWorkInfo} />
+
+          <Section text="Work Experiance">
+            <WorkInput data={workInfo} set={setWorkInfo} />
+          </Section>
         </div>
         <div className="display w-[65%] flex items-center flex-col bg-slate-200">
-          <DisplayEdu
-            uniName="uniName"
-            subject="scince"
-            endYear="2023"
-            notes="Lorem ipsum dolor sit amet, qui Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatatconsectetur cupidatat."
-          />
           {eduInfo.subject && (
             <DisplayEdu
               uniName={eduInfo.uniName}

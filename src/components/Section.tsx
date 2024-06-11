@@ -9,7 +9,7 @@ interface Props {
 const Section: FC<Props> = ({ text, children }) => {
   const [open, setOpen] = useState(false);
 
-  const childernwith = cloneElement(children, { hide: setOpen });
+  const childernwith = cloneElement(children, { show: setOpen });
 
   const style = "border-2 border-black rounded flex  transition-[height] ";
   const styleBanner = "items-center justify-between  px-8 py-2 ";

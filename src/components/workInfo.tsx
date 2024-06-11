@@ -41,7 +41,7 @@ const WorkInput: FC<Props> = ({ set, show, data }) => {
   };
   const handelSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (show) show(true);
+    if (show) show(false);
   };
   return (
     <form
