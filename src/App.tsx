@@ -5,8 +5,8 @@ import Card from "./components/Card";
 import Section from "./components/Section";
 import { DisplayEdu } from "./components/DisplayEdu";
 import PersonalInfo from "./components/PersonalInfo";
-import { defaultPersonalInfo } from "./DefaultData";
 
+import { defaultPersonalInfo } from "./DefaultData";
 import { Info } from "./components/PersonalInfo";
 import { Data } from "./components/Card";
 import { defaultData } from "./components/Card";

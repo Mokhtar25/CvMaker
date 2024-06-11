@@ -1,4 +1,5 @@
 import React, { ChangeEvent, FC } from "react";
+import { defaultPersonalInfo } from "../DefaultData";
 
 export type Info = {
   firstName: string;
@@ -43,7 +44,7 @@ const PersonalInfo: FC<Props> = ({ show, set, data }) => {
     }
   };
   const rest = () => {
-    // to do
+    return set(defaultPersonalInfo);
   };
 
   return (
