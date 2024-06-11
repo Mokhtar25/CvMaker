@@ -26,7 +26,9 @@ function App() {
           <Section text={"Education"}>
             <Card submit={setEduInfo} />
           </Section>
-          <PersonalInfo set={setPerInfo} data={perInfo} />
+          <Section text="Personal Information">
+            <PersonalInfo set={setPerInfo} data={perInfo} />
+          </Section>
         </div>
         <div className="display w-[65%] flex items-center flex-col bg-slate-200">
           <DisplayEdu
