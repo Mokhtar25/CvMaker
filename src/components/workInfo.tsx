@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from "react";
+import { ChangeEvent, FC, FormEvent } from "react";
 import { Button, Input } from "./PersonalInfo";
 import { defaultWorkInfo } from "../DefaultData";
 
@@ -39,11 +39,15 @@ const WorkInput: FC<Props> = ({ set, show, data }) => {
   const reset = () => {
     set(defaultWorkInfo);
   };
-  const handelSubmit = () => {
+  const handelSubmit = (e: FormEvent) => {
+    e.preventDefault();
     if (show) show(true);
   };
   return (
-    <form onSubmit={handelSubmit}>
+    <form
+      onSubmit={handelSubmit}
+      className="border-2 border-black gap-x-6 gap-y-4 font-bold bg-slate-200 text-lg flex flex-wrap p-6"
+    >
       <Input
         type="string"
         label="Company Name"
@@ -81,8 +85,19 @@ const WorkInput: FC<Props> = ({ set, show, data }) => {
         onChange={(e) => handelChange("notes", e)}
       />
 
-      <Button title="Reset" type="reset" onClick={() => reset()} />
-      <Button title="Submit" type="submit" onClick={() => handelSubmit()} />
+      <div className="flex w-full">
+        <Button
+          title="Reset"
+          type="reset"
+          onClick={() => reset()}
+          style="mt-6 w-full ml-auto mr-20 h-14"
+        />
+        <Button
+          title="Submit"
+          type="submit"
+          style="mt-6 w-full ml-auto mr-20 h-14"
+        />
+      </div>
     </form>
   );
 };

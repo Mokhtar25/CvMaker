@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Section: FC<Props> = ({ text, children }) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const childernwith = cloneElement(children, { hide: setOpen });
 

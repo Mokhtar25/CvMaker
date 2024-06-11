@@ -5,7 +5,10 @@ import Card from "./components/Card";
 import Section from "./components/Section";
 import { DisplayEdu } from "./components/DisplayEdu";
 import PersonalInfo from "./components/PersonalInfo";
+import WorkInput from "./components/workInfo";
 
+import { WorkInfo } from "./components/workInfo";
+import { defaultWorkInfo } from "./DefaultData";
 import { defaultPersonalInfo } from "./DefaultData";
 import { Info } from "./components/PersonalInfo";
 import { Data } from "./components/Card";
@@ -17,6 +20,7 @@ import { defaultData } from "./components/Card";
 function App() {
   const [eduInfo, setEduInfo] = useState<Data>(defaultData);
   const [perInfo, setPerInfo] = useState<Info>(defaultPersonalInfo);
+  const [workInfo, setWorkInfo] = useState<WorkInfo>(defaultWorkInfo);
 
   return (
     <>
@@ -29,6 +33,7 @@ function App() {
           <Section text={"Education"}>
             <Card submit={setEduInfo} />
           </Section>
+          <WorkInput data={workInfo} set={setWorkInfo} />
         </div>
         <div className="display w-[65%] flex items-center flex-col bg-slate-200">
           <DisplayEdu
