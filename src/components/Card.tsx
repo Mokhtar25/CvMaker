@@ -8,7 +8,7 @@ import React, {
 import { useState } from "react";
 
 interface Props {
-  submit: any;
+  submit: React.Dispatch<React.SetStateAction<Data>>;
   hide?: (e: boolean) => void;
 }
 export interface Data {
@@ -87,12 +87,9 @@ const CardEduc: FC<Props> = (props) => {
           {"Year"}
           <input
             value={data.endYear}
-            min={1980}
-            max={2030}
-            onInvalid={(e: React.InvalidEvent<HTMLInputElement>) =>
-              e.target.setCustomValidity("Please enter a valid year")
-            }
             required
+            min={1970}
+            max={2040}
             type="number"
             className={inputStyle}
             onChange={(e) => handelChange("endYear", e)}
