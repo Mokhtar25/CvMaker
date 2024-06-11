@@ -19,7 +19,6 @@ type Props = {
 
 const PersonalInfo: FC<Props> = ({ show, set, data }) => {
   const handelSubmit = (e: React.FormEvent) => {
-    console.log("worked");
     e.preventDefault();
     if (show) show(false);
   };
