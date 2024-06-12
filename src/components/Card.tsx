@@ -6,6 +6,7 @@ import React, {
   FormEventHandler,
 } from "react";
 import { useState } from "react";
+import { defaultData } from "../DefaultData";
 
 interface Props {
   submit: React.Dispatch<React.SetStateAction<Data>>;
@@ -18,12 +19,6 @@ export interface Data {
   notes: string;
 }
 
-export const defaultData: Data = {
-  uniName: "",
-  subject: "",
-  endYear: "",
-  notes: "",
-};
 // you can also use typescript like this {cardName, type} : { cardName: string, type:number}
 const CardEduc: FC<Props> = (props) => {
   const [data, setData] = useState<Data>(defaultData);

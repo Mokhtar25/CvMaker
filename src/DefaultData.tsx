@@ -1,5 +1,6 @@
 import { Info } from "./components/PersonalInfo";
 import { WorkInfo } from "./components/workInfo";
+import { Data } from "./components/Card";
 
 export const defaultPersonalInfo: Info = {
   firstName: "",
@@ -13,9 +14,16 @@ export const defaultPersonalInfo: Info = {
 
 export const defaultWorkInfo: WorkInfo = {
   location: "",
-  company: "",
+  company: "Startbucks",
   startDate: "",
   finishDate: "",
   notes: "",
   jobTitle: "",
+};
+
+export const defaultData: Data = {
+  uniName: "Paderborn",
+  subject: "",
+  endYear: "",
+  notes: "",
 };

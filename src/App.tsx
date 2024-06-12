@@ -13,7 +13,7 @@ import { defaultWorkInfo } from "./DefaultData";
 import { defaultPersonalInfo } from "./DefaultData";
 import { Info } from "./components/PersonalInfo";
 import { Data } from "./components/Card";
-import { defaultData } from "./components/Card";
+import { defaultData } from "./DefaultData";
 
 // you can passdown functions to help with passing and moving around data that might change and
 // also to rint inthe other field and when submit
