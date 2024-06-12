@@ -6,6 +6,7 @@ import Section from "./components/Section";
 import { DisplayEdu } from "./components/DisplayEdu";
 import PersonalInfo from "./components/PersonalInfo";
 import WorkInput from "./components/workInfo";
+import DisplayWork from "./components/displayWork";
 
 import { WorkInfo } from "./components/workInfo";
 import { defaultWorkInfo } from "./DefaultData";
@@ -47,6 +48,8 @@ function App() {
               endYear={eduInfo.endYear}
             />
           )}
+
+          {workInfo.company && <DisplayWork data={workInfo} />}
         </div>
       </div>
       <Footer />
