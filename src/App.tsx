@@ -7,6 +7,7 @@ import { DisplayEdu } from "./components/DisplayEdu";
 import PersonalInfo from "./components/PersonalInfo";
 import WorkInput from "./components/workInfo";
 import DisplayWork from "./components/displayWork";
+import DisplayPersonalInfo from "./components/DisplayPersonalInfo";
 
 import { WorkInfo } from "./components/workInfo";
 import { defaultWorkInfo } from "./DefaultData";
@@ -40,6 +41,7 @@ function App() {
           </Section>
         </div>
         <div className="display w-full flex items-center flex-col bg-slate-200 ">
+          <DisplayPersonalInfo data={perInfo} />
           {eduInfo.subject && (
             <DisplayEdu
               uniName={eduInfo.uniName}
@@ -48,7 +50,6 @@ function App() {
               endYear={eduInfo.endYear}
             />
           )}
-
           {workInfo.company && <DisplayWork data={workInfo} />}
         </div>
       </div>

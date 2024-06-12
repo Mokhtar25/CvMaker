@@ -3,13 +3,13 @@ import { WorkInfo } from "./components/workInfo";
 import { Data } from "./components/Card";
 
 export const defaultPersonalInfo: Info = {
-  firstName: "",
-  lastName: "",
-  phoneNumber: "",
-  email: "",
-  birthDate: "",
-  jobTitle: "",
-  website: "",
+  firstName: "Adam ",
+  lastName: "Sandler",
+  phoneNumber: "0158123213",
+  email: "example@gamil.com",
+  birthDate: "2004-21-12",
+  jobTitle: "Software Devloper ",
+  website: "Adamsandler.com",
 };
 
 export const defaultWorkInfo: WorkInfo = {
