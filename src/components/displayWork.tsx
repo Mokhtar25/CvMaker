@@ -6,7 +6,7 @@ interface Props {
 }
 const DisplayWork: FC<Props> = ({ data }) => {
   return (
-    <div className="display-card border-2 border-black bg-slate-300 p-10 gap-2">
+    <div className="display-card border-black w-full p-10 gap-2">
       <h2 className="display-subject text-3xl">{data.jobTitle}</h2>
       <h5 className="display-uniName text-xl text-gray-600">{data.company}</h5>
       <span className="display-endYear  text-gray-600 text-xl">

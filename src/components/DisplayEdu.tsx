@@ -5,7 +5,7 @@ import { Data } from "./Card";
 
 export const DisplayEdu: FC<Data> = ({ uniName, endYear, notes, subject }) => {
   return (
-    <div className="display-card border-2 border-black bg-slate-300 p-10 gap-2">
+    <div className="display-card border-black p-10 gap-2 w-full">
       <h2 className="display-subject text-3xl">{subject}</h2>
       <h5 className="display-uniName text-xl text-gray-600">{uniName}</h5>
       <span className="display-endYear pl-[70%] text-gray-600 text-xl">
