@@ -5,7 +5,7 @@ import { Data } from "./components/Card";
 export const defaultPersonalInfo: Info = {
   firstName: "John",
   lastName: "Doe",
-  phoneNumber: "0158123213",
+  phoneNumber: "123123123",
   email: "example@gamil.com",
   birthDate: "2000-12-12",
   jobTitle: "Software Developer ",
