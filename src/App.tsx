@@ -59,8 +59,7 @@ function App() {
             )}
           </div>
           <span className="text-4xl py-4 font-bold  flex justify-center">
-            {" "}
-            Professinoal Expreaince
+            Professional Experience
           </span>
 
           {workInfo.company && <DisplayWork data={workInfo} />}
