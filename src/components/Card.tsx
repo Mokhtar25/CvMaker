@@ -96,7 +96,7 @@ const CardEduc: FC<Props> = (props) => {
         </label>
         <div className="flex gap-6 py-4 pr-4">
           <button type="reset" className={buttonStyle} onClick={rest}>
-            Rest
+            Reset
           </button>
           <button className={buttonStyle} type="submit">
             Submit
