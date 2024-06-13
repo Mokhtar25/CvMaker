@@ -40,7 +40,10 @@ function App() {
             <WorkInput data={workInfo} set={setWorkInfo} />
           </Section>
         </div>
-        <div className="display w-full flex items-center flex-col bg-slate-100 ">
+        <div
+          className="display w-full flex items-center flex-col bg-slate-100 "
+          id="display"
+        >
           <div className="w-full">
             <DisplayPersonalInfo data={perInfo} />
             <span className="text-4xl py-4 font-bold  flex justify-center">
