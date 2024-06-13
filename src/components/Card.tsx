@@ -1,10 +1,4 @@
-import React, {
-  ChangeEvent,
-  ChangeEventHandler,
-  FC,
-  FormEvent,
-  FormEventHandler,
-} from "react";
+import React, { FC } from "react";
 import { useState } from "react";
 import { defaultData } from "../DefaultData";
 

@@ -7,7 +7,7 @@ export const defaultPersonalInfo: Info = {
   lastName: "Sandler",
   phoneNumber: "0158123213",
   email: "example@gamil.com",
-  birthDate: "12-12-2000",
+  birthDate: "2000-12-12",
   jobTitle: "Software Devloper ",
   website: "Adamsandler.com",
 };

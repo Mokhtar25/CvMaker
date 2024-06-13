@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 import "./style/DisplayEdu.css";
 import { Data } from "./Card";
