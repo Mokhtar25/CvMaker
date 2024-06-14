@@ -20,6 +20,8 @@ import { defaultData } from "./DefaultData";
 // also to rint inthe other field and when submit
 
 function App() {
+  // if you wanna set up data or instlize data use 'useEffect() and with and empty array, that function get called only
+  // on insital redreder'
   const [eduInfo, setEduInfo] = useState<Data>(defaultData);
   const [perInfo, setPerInfo] = useState<Info>(defaultPersonalInfo);
   const [workInfo, setWorkInfo] = useState<WorkInfo>(defaultWorkInfo);
